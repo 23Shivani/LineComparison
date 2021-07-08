@@ -27,20 +27,33 @@ public class LineComparison {
 			if (lineOne.equals(lineTwo)) {
 				return true;
 			}
-			return false;
+				return false;
 		}
-	
+		public static void lineCompare(Integer lineOne, Integer lineTwo) {
+			int result = Integer.compare(lineOne, lineTwo);
+			if (result>0) {
+				System.out.println("LineXY is greater");
+			}
+			else if (result<0) {
+				System.out.println("LineAB is greater");
+			}
+			else System.out.println("Both lines are equals");
+		}
+		
 		public static void main(String[] args) {
 			System.out.println("Welcome to Line Computation Program");
 			LineComparison lineXY = new LineComparison(2, 2, 5, 4);
 			Integer lengthXY = LengthOfLine();
 			LineComparison lineAB = new LineComparison(9, 4, 2, 6);
 			Integer lengthAB = LengthOfLine();
+	//		System.out.println(lengthAB);
+	//		System.out.println(lengthXY);
 			if (lineEquality(lengthXY, lengthAB)) {
-				System.out.println("Both lines are equal with length: "+ lengthAB);
+				System.out.println("Both lines are euqal with length: "+ lengthAB);
 			}
 			else {
-				System.out.println("Lines having different lengths");	
-				}
+				System.out.println("Both lines having different lengths");
+			}
+			lineCompare(lengthAB, lengthXY);
 	}
 }
